@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function leerNumero(mensaje= "ingrese el numero que desees", numerodefecto="0"){
+            let numero;
+            do{
+                numero=parseInt(prompt(mensaje, numerodefecto));
+            }while(isNaN(numero));
+
+            return numero;
+        }
+        function sumarNumero(numero1, numero2){
+            return numero1+numero2;   
+        }
+        function deseaContinuar(mensaje="¿Desea Continuar? "){
+            return confirm(mensaje);
+        }
+        function realizarSuma(){
+            do{
+                let numero1 = leerNumero("Ingrese el valor del numero 1", "0") ;
+                let numero2 = leerNumero("Ingrese el valor del numero 2", "0");
+                let numero3 = leerNumero() ;
+                let numero4 = leerNumero(undefined, "0");
+                alert(sumarNumero(numero1, numero2));
+            }while(deseaContinuar("desea seguir sumnado?"));
+            alert("Buena Suerte!!");
+        }
+
+        function colocarValor(boton){
+            boton.disabled = true;
+            let valor = prompt("ingrese X ó O");
+            boton.value = valor;
+            boton.children[0].innerHTML = valor;
+
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <th><button type="button" id="11" onclick="colocarValor(this)"><span></span></button></th>
+        <th><button type="button" id="12">&nbsp;</button></th>
+        <th><button type="button" id="13">&nbsp;</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" id="21">&nbsp;</button></th>
+        <th><button type="button" id="22">&nbsp;</button></th>
+        <th><button type="button" id="23">&nbsp;</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" id="31">&nbsp;</button></th>
+        <th><button type="button" id="32">&nbsp;</button></th>
+        <th><button type="button" id="33">&nbsp;</button></th>
+    </tr>
+</table>
+<marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
+    <marquee behavior="alternate">
+        <h1 style="color:red">Curso de html desde cero</h1>    </marquee>
+  </marquee>
+<form>
+    
+    <fieldset>
+        <legend>Informacion Personal</legend>
+        <table>
+            <tr>
+                <th style="text-align:left;"><label for="TipoIdentificacion" >Tipo Identificacion</label></th>
+                <td>
+                    <select id="TipoIdentificacion" name="Identifiacdores">
+                        <option value="TarjetaIdentidad">Tarjeta Identidad </option>
+                        <option value="Cedula" selected>Cedula</option>
+                        <option value="CedulaExtranjera" >Cedula Extranjera</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                </td>
+                <th style="text-align:left;"><label for="Identificacion">Identificacion</label></th>
+                <td><input type="number" id="Identificacion" name="lname"></td>
+                <th style="text-align:left;"><label for="Fecha">Fecha</label></th>
+                <td><input type="date" id="Fecah" name="lname"></td>
+            </tr>
+
+            <tr>
+                <th style="text-align:left;"><label for="primernombre">primer nombre</label></th>
+                <td><input type="text" id="primernombre" name="lname" maxlength="20"></td>
+                <th style="text-align:left;"> <label for="SegundoNombre">Segundo Nombre</label></th>
+                <td> <input type="text" id="SegundoNombre" name="lname" maxlength="20"></td>
+                <th style="text-align:left;"><label for="primerApellido">primer Apellido</label></th>
+                <td><input type="text" id="primerApellido" name="lname" maxlength="20"></td>
+                <th style="text-align:left;"><label for="SegundoApellido">Segundo Apellido</label></th>
+                <td><input type="text" id="SegundoApellido" name="lname" maxlength="20"></td>
+            </tr>
+
+            <tr>
+                <th style="text-align:left;"><label for="lname">RH</label></th>
+                <td>
+                    <select id="cars" name="gustos">
+                        <option value="A+" selected>A+ </option>
+                        <option value="A-">A-</option>
+                        <option value="O+" > O+</option>
+                        <option value="0-">0-</option>
+                        <option value="AB">AB</option>
+                    </select>
+                </td>
+                <th style="text-align:left;"><label for="Pais">Pais</label></th>
+                <td>
+                    <select id="Pais" name="gustos">
+                        <option value="Argentina">Argentina</option>
+                        <option value="Colombia" selected>Colombia</option>
+                        <option value="Chile" > Chile</option>
+                        <option value="Inglaterra">Inglaterra</option>
+                        <option value="EEUU">EEUU</option>
+                        <option value="CostaRica">Costa Rica</option>
+                   </select>
+                </td>
+                <th style="text-align:left;"><label for="lname">Departamento</label></th>
+                <td>
+                    <select id="Departamento" name="gustos">
+                        <option value="Antioquia">Antioquia</option>
+                        <option value="Boyaca" selected>Boyaca</option>
+                        <option value="Vichada" > vichada</option>
+                        <option value="Santander">Santander</option>
+                    </select>
+                </td>
+                <th style="text-align:left;"><label for="Ciudad">Ciudad</label></th>
+                <td>
+                    <select id="Ciudad" name="gustos">
+                        <option value="Abejorral">Abejorral</option>
+                        <option value="ceja" selected>Ceja</option>
+                        <option value="Medellin" >Medellin</option>
+                        <option value="RioNegro">Rio Negro</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <!--<th><input type="submit" value="Enviar"></th>-->
+                <th><input type="reset" value="resetiar todo"></th>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Informacion contacto</legend>
+        <table >
+            <tr>
+                <th style="text-align:left;"><label for="NumeroTelefonico">Numero Telefonico</label></th>
+                <td><input type="text" id="NumeroTelefonico" name="lname"></td>
+                <th style="text-align:left;"><label for="Correo">Correo</label></th>
+                <td><input type="text" id="Correo" name="lname"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Gustos Musicales</legend>
+        <table>
+            <tr>
+                <th style="text-align:left;"> <label for="GustosMusicales">Gustos Musicales</label></th>
+                <td>
+                     <select id="GustosMusicales" name="gustos">
+                    <option value="Pop">Pop</option>
+                    <option value="saab" selected>Rock</option>
+                    <option value="fiat" > Metalica</option>
+                    <option value="audi">Vallenato</option>
+                   </select>
+                </td>
+                <th style="text-align:left;"><label for="lname">Foto</label> </th>
+                <td><input type="file" id="Foto" name="lname"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <input type="reset" value="resetiar todo">
+    <fieldset>
+        <legend>Mis Videos Favoritos</legend>
+        <table>
+            <tr>
+                <th>
+                    <video width="320" height="240" controls>
+                        <source src="movies/y2mate.com - Shiloh vibes sadlofi rain_480p.mp4" type="video/mp4">
+                      </video>
+                </th>
+                <th>
+                    <video width="320" height="240" controls>
+                        <source src="movies/y2mate.com - Shiloh vibes sadlofi rain_480p.mp4" type="video/mp4">
+
+                      </video>
+                </th>
+                <th>
+                    <video width="320" height="240" controls>
+                        <source src="movies/y2mate.com - Shiloh vibes sadlofi rain_480p.mp4" type="video/mp4">
+                  </video>
+                </th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<center>
+<table border="1">
+    <thead>
+        <th colspan="4">mis videos Favoritos</th>
+    </thead>
+    <tbody>
+        <tr>
+            <th><a href="https://www.youtube.com/embed/rCHzZflWHZs" target="contenido">video1</a></th>
+            <th><a href="https://www.youtube.com/embed/QAnT_NntNgE" target="contenido"> video2</a></th>
+            <th><a href="https://www.youtube.com/embed/XMRqRvcb6hM?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA" target="contenido"> video3</a></th>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="4">
+                <iframe name="contenido" width="853" height="480"  title="shootout - (slowed+ reverb) [16 minutes loop]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+
+        </tr>
+    </tfoot>
+</table>
+</center>
+</body>
+</html>
