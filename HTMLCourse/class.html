@@ -6,6 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let numeroUno = 123e3;
+        alert(numeroUno);
+
+        let  numerodos = 123e-3;
+        alert(numerodos);
+
+        let texto = "esta";
+        let textoDos = "otra";
+        alert(texto.localeCompare(textoDos));
+
+         texto = "otra";
+         textoDos = "esta";
+        alert(texto.localeCompare(textoDos));
+
+         texto = "esta";
+         textoDos = "esta";
+        alert(texto.localeCompare(textoDos));
+
+        let nit = /\d{3}[.]\d{3}[-][a-zA-Z]{3}[.]\d{2}[a-zA-Z]{2}$/;
+        let cadena1 = prompt("123.456.azs.78gh");
+        alert("NIT" + nit.test(cadena1));
+        alert("serch" + cadena1.search(nit));
+
+        let nuevoTexto = "helmer quintero";
+        alert("cuantas e contiene" + nuevoTexto.match(/x/g || []).length);
+
+
+
         function leerNumero(mensaje= "ingrese el numero que desees", numerodefecto="0"){
             let numero;
             do{
@@ -33,17 +61,21 @@
 
         function colocarValor(boton){
             boton.disabled = true;
-            let valor = prompt("ingrese X ó O");
-            boton.value = valor;
-            boton.children[0].innerHTML = valor;
+            let cadena = window.prompt("ingrese X ó O");
 
+            document.getElementById("primernombre").value = cadena.trim().padStart(10, "-");
+            document.getElementById("SegundoNombre").value = cadena.trimEnd();
+            document.getElementById("primerApellido").value = cadena.trimLeft();
+            document.getElementById("SegundoApellido").value = cadena.trimRight();
+
+            boton.textContent = cadena.trim();
         }
     </script>
 </head>
 <body>
 <table>
     <tr>
-        <th><button type="button" id="11" onclick="colocarValor(this)"><span></span></button></th>
+        <th><button type="button" id="11" onclick="colocarValor(this)">&nbsp;</button></th>
         <th><button type="button" id="12">&nbsp;</button></th>
         <th><button type="button" id="13">&nbsp;</button></th>
     </tr>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="calculadora.js"></script>
+    <script src="funcionesHtml.js"></script>
+    <script src="funcionesMatematicas.js"></script>
+    <script src="funcionesTexto.js"></script>
+
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th colspan="4"><button colspan="4" id="tdPantalla">123</button></th>
+        </tr>
+        <tr>
+            <th><button id="d7" onclick="controlarEvento(this)">7</button></th>
+            <th><button onclick="controlarEvento(this)">8</button></th>
+            <th><button onclick="controlarEvento(this)">9</button></th>
+            <th><button onclick="controlarEvento(this)">+</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="controlarEvento(this)">4</button></th>
+            <th><button onclick="controlarEvento(this)">5</button></th>
+            <th><button onclick="controlarEvento(this)">6</button></th>
+            <th><button onclick="controlarEvento(this)">-</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="controlarEvento(this)">1</button></th>
+            <th><button onclick="controlarEvento(this)">2</button></th>
+            <th><button onclick="controlarEvento(this)">3</button></th>
+            <th><button onclick="controlarEvento(this)">*</button></th>
+        </tr>
+        <tr>
+            <th colspan="2"><button onclick="controlarEvento(this)">.</button></th>
+            <th><button onclick="controlarEvento(this)">0</button></th>
+            <th><button onclick="controlarEvento(this)">/</button></th>
+        </tr>
+        <tr>
+            <th colspan="4"><button onclick="controlarEvento(this)">=</button></th>
+        </tr>
+    </table>
+</body>
+</html>
